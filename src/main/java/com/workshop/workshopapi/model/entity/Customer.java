@@ -19,12 +19,12 @@ public class Customer {
     private Long id;
 
     @Column(length = 150, nullable = false)
-    @NotEmpty
+    @NotEmpty(message = "{customer.attribute.name.empty}")
     private String name;
 
     @Column(length = 11, nullable = false)
-    @NotEmpty
-    @CPF
+    @NotEmpty(message = "{customer.attribute.cpf.empty}")
+    @CPF(message = "{customer.attribute.cpf.invalid}")
     private String cpf;
 
     @Column(name = "created_date", updatable = false)
